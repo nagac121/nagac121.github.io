@@ -1,20 +1,38 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog');
+const postsByYear = posts.reduce((acc, post) => {
+  const year = post.data.pubDate.getFullYear();
+  if (!acc[year]) acc[year] = [];
+  acc[year].push(post);
+  return acc;
+}, {});
 ---
 
 <Layout title="Blog | Naga">
 	<div class="max-w-4xl mx-auto">
 		<h1 class="text-3xl font-bold mb-8 text-white">Blog</h1>
 		
-		<p class="text-gray-400">Blog posts will be listed here once content collections are set up.</p>
+		{Object.keys(postsByYear).sort((a, b) => b - a).map(year => (
+			<section class="mb-8">
+				<h2 class="text-2xl font-semibold mb-4 text-blue-400">{year}</h2>
+				<ul class="space-y-4">
+					{postsByYear[year].sort((a, b) => b.data.pubDate - a.data.pubDate).map(post => (
+						<li class="bg-gray-800 p-4 rounded-lg">
+							<a href={`/blog/${post.id}`} class="text-white hover:text-blue-400 transition">
+								<h3 class="text-xl font-semibold mb-2">{post.data.title}</h3>
+								<p class="text-gray-400">{post.data.pubDate.toLocaleDateString()}</p>
+							</a>
+						</li>
+					))}
+				</ul>
+			</section>
+		))}
 		
-		<ul class="space-y-4">
-			<li class="bg-gray-800 p-4 rounded-lg">
-				<a href="/blog/transitioning-to-agentic-ai" class="text-white hover:text-blue-400 transition">
-					<h3 class="text-xl font-semibold mb-2">Transitioning from Full-Stack to Agentic AI</h3>
-					<p class="text-gray-400">March 31, 2024</p>
-				</a>
-			</li>
-		</ul>
+		{posts.length === 0 && (
+			<p class="text-gray-400">No blog posts yet.</p>
+		)}
 	</div>
 </Layout>
