@@ -1,6 +1,6 @@
 ---
 title: "My Journey into Web Development"
-pubDate: 2024-01-15
+pubDate: 2026-04-17
 description: "How I started my career in web development and what I learned along the way."
 author: "Naga"
 ---
