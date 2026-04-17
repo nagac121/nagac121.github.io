@@ -2,7 +2,7 @@
 title: "Transitioning from Full-Stack to Agentic AI"
 pubDate: 2024-03-31
 description: "My journey from traditional full-stack development to exploring the exciting world of Agentic AI and LangGraph."
-author: "Naga Chaitanya"
+author: "Naga"
 ---
 
 # Transitioning from Full-Stack to Agentic AI

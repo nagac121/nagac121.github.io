@@ -2,7 +2,7 @@
 title: "My Journey into Web Development"
 pubDate: 2024-01-15
 description: "How I started my career in web development and what I learned along the way."
-author: "Naga Chaitanya"
+author: "Naga"
 ---
 
 # My Journey into Web Development
