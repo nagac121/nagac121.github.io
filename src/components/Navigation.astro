@@ -7,7 +7,6 @@ const currentPath = Astro.url.pathname;
 		<a href="/" class="text-xl font-bold text-white">Naga</a>
 		<ul class="flex space-x-4">
 			<li><a href="/" class={`text-gray-300 hover:text-white ${currentPath === '/' ? 'text-blue-400' : ''}`}>Home</a></li>
-			<li><a href="/profile" class={`text-gray-300 hover:text-white ${currentPath === '/profile' ? 'text-blue-400' : ''}`}>Profile</a></li>
 			<li><a href="/blog" class={`text-gray-300 hover:text-white ${currentPath.startsWith('/blog') ? 'text-blue-400' : ''}`}>Blog</a></li>
 			<li><a href="/contact" class={`text-gray-300 hover:text-white ${currentPath === '/contact' ? 'text-blue-400' : ''}`}>Contact</a></li>
 		</ul>
