@@ -7,13 +7,13 @@ import Layout from '../layouts/Layout.astro';
 		<h1 class="text-3xl font-bold mb-8 text-white">Contact Me</h1>
 		
 		<p class="text-gray-300 mb-6">
-			Fill out the form below. I will receive your email and reply with any requested documents mentioned in the message.
+			Fill out the form below and submit the form to send me an email. I will reply back as soon as possible. I look forward to hearing from you!
 		</p>
 		
 		<form action="https://formspree.io/f/your_id" method="POST" class="space-y-4">
 			<div>
-				<label for="name" class="block text-gray-300 mb-2">Name (Optional)</label>
-				<input type="text" id="name" name="name" class="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-blue-400">
+				<label for="name" class="block text-gray-300 mb-2">Name <span class="text-red-500">*</span></label>
+				<input type="text" id="name" name="name" required class="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-blue-400">
 			</div>
 			
 			<div>
@@ -22,7 +22,7 @@ import Layout from '../layouts/Layout.astro';
 			</div>
 			
 			<div>
-				<label for="email" class="block text-gray-300 mb-2">Email (Mandatory)</label>
+				<label for="email" class="block text-gray-300 mb-2">Email <span class="text-red-500">*</span></label>
 				<input type="email" id="email" name="email" required class="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-blue-400">
 			</div>
 			
@@ -32,12 +32,12 @@ import Layout from '../layouts/Layout.astro';
 			</div>
 			
 			<div>
-				<label for="message" class="block text-gray-300 mb-2">Message (Mandatory, max 500 chars)</label>
+				<label for="message" class="block text-gray-300 mb-2">Message <span class="text-red-500">*</span> (max 500 chars)</label>
 				<textarea id="message" name="message" required maxlength="500" rows="5" class="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-blue-400 resize-none"></textarea>
 			</div>
 			
 			<button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition">
-				Send Message
+				Submit
 			</button>
 		</form>
 	</div>
