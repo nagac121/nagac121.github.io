@@ -52,8 +52,7 @@ import Layout from '../layouts/Layout.astro';
 			<!-- Form status messages -->
 			<div id="form-status" class="hidden mt-4 p-4 rounded-lg"></div>
 
-			<!-- Monthly limit notice -->
-			<p class="text-sm text-gray-400 mt-6">Note: This form accepts 50 inquiries per month.</p>
+
 		</form>
 	</div>
 </Layout>
@@ -128,10 +127,8 @@ import Layout from '../layouts/Layout.astro';
 			.catch(error => {
 				// Handle error responses
 				if (error.status === 402 || error.status === 429) {
-					// Monthly limit reached
-					showStatus('Monthly submission limit (50) has been reached. I have been notified of this limit; please reach out via LinkedIn in the meantime.', 'error-limit');
-					// Hide the form
-					form.style.display = 'none';
+					// Email service limit reached
+					showStatus("Email can't be sent at this time", 'error');
 				} else {
 					showStatus('Sorry, there was an error sending your message. Please try again later.', 'error');
 				}
