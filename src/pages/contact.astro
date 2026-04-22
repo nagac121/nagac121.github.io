@@ -20,6 +20,11 @@ import Layout from '../layouts/Layout.astro';
 			</div>
 
 			<div>
+				<label for="subject" class="block text-gray-300 mb-2">Subject <span class="text-red-500">*</span> (min 5, max 100 chars)</label>
+				<input type="text" id="subject" name="subject" required minlength="5" maxlength="100" class="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-blue-400">
+			</div>
+
+			<div>
 				<label for="name" class="block text-gray-300 mb-2">Name <span class="text-red-500">*</span></label>
 				<input type="text" id="name" name="name" required class="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-blue-400">
 			</div>
@@ -76,12 +81,14 @@ import Layout from '../layouts/Layout.astro';
 			const formData = new FormData(form);
 
 			// Get form values from FormData with proper null handling
+			const subjectInput = formData.get('subject');
 			const nameInput = formData.get('name');
 			const emailInput = formData.get('email');
 			const organizationInput = formData.get('organization');
 			const phoneInput = formData.get('phone');
 			const messageInput = formData.get('message');
 
+			const subject = subjectInput !== null ? String(subjectInput).trim() : '';
 			const name = nameInput !== null ? String(nameInput).trim() : '';
 			const email = emailInput !== null ? String(emailInput).trim() : '';
 			const organization = organizationInput !== null ? String(organizationInput).trim() : '';
@@ -89,6 +96,16 @@ import Layout from '../layouts/Layout.astro';
 			const message = messageInput !== null ? String(messageInput).trim() : '';
 
 			// Additional client-side validation for message length
+			if (subject.length < 5) {
+				showStatus('Subject must be at least 5 characters', 'error');
+				return;
+			}
+
+			if (subject.length > 100) {
+				showStatus('Subject too long (maximum 100 characters)', 'error');
+				return;
+			}
+
 			if (message.length < 20) {
 				showStatus('Please provide a detailed message (minimum 20 characters)', 'error');
 				return;
@@ -121,7 +138,7 @@ import Layout from '../layouts/Layout.astro';
 			})
 			.then(data => {
 				// Success
-				showStatus(`Thank you, ${name}! Your message has been sent. I will reply to your email with the requested Information shortly.`, 'success');
+				showStatus(`Thank you, ${name}! Your message has been received. I will reply to your email with the requested Information shortly.`, 'success');
 				form.reset();
 			})
 			.catch(error => {
