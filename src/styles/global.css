@@ -1,1 +1,43 @@
 @import "tailwindcss";
+
+@layer base {
+  .prose {
+    @apply text-base;
+  }
+
+  .prose h1 {
+    @apply text-2xl font-bold mb-4 mt-8;
+  }
+
+  .prose h2 {
+    @apply text-xl font-semibold mb-3 mt-8;
+  }
+
+  .prose h3 {
+    @apply text-lg font-medium mb-2 mt-6;
+  }
+
+  .prose p {
+    @apply mb-4;
+  }
+
+  .prose ul {
+    @apply mb-4 pl-6;
+  }
+
+  .prose li {
+    @apply mb-2;
+  }
+
+  .prose code {
+    @apply bg-gray-800 text-gray-200 px-1.5 py-0.5 rounded text-sm;
+  }
+
+  .prose pre {
+    @apply bg-gray-800 p-4 rounded-lg overflow-x-auto mb-4 text-sm;
+  }
+
+  .prose blockquote {
+    @apply border-l-4 border-gray-600 pl-4 italic mb-4 text-gray-400;
+  }
+}
