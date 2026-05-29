@@ -14,9 +14,10 @@ author: "Naga"
 - MCP server = program that exposes tools/resources/prompts
 - Client (like Cursor/Claude Desktop/etc.) connects to it
 - Client can call your tools
-  Pick a runtime
 
-### 2. Easiest: Node.js + TypeScript (good docs, fast setup)
+### 2. Pick a runtime
+
+Easiest: Node.js + TypeScript (good docs, fast setup)
 
 ### 3. Create the smallest project
 
@@ -24,7 +25,7 @@ author: "Naga"
 - install MCP SDK
 - create one file server entrypoint
 
-### 4.Implement one tool only
+### 4. Implement one tool only
 
 - Example idea: `echo_message(message: string) -> string`
 - Keep schema tiny so you understand how input/output works
@@ -49,10 +50,12 @@ author: "Naga"
 - Create a folder at any path with the name `simple-mcp`
 - This is your project name
 
-## Tools we are going to create are as follows
+## Tools we are going to create
 
-`echo_message` → returns same message  
-`sum_numbers` → returns sum of two numbers
+We'll implement these two tools:
+
+- `echo_message` → returns same message  
+- `sum_numbers` → returns sum of two numbers
 
 ## Step 1: Initialize the project with required dependencies
 
