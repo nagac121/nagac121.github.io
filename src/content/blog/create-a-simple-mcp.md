@@ -264,7 +264,8 @@ follow restart cursor procedure above and ping this in the chat
 result: sum result
 
 > Full code
-> \src\server.ts
+
+src\server.ts
 
 ```ts
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
