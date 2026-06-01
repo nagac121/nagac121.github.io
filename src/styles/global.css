@@ -3,17 +3,11 @@
 @layer base {
   html,
   body {
-    background-color: white;
-    color: #111827;
+    background-color: #0f172a;
+    color: #f8fafc;
     transition:
       background-color 0.2s ease,
       color 0.2s ease;
-  }
-
-  html.dark,
-  html.dark body {
-    background-color: #111827;
-    color: #f3f4f6;
   }
 
   .prose {
@@ -80,64 +74,33 @@
   }
 }
 
-html.dark .hero-section {
-  background-color: #0f172a;
-}
-
-html.dark .hero-heading,
-html.dark .hero-copy {
-  color: #f8fafc;
-}
-
-html.dark .hero-cta-secondary {
-  background-color: #334155;
-  color: #f8fafc;
-}
-
-html.dark .nav-surface {
-  background-color: #0f172a;
-}
-
-html.dark .nav-link,
-html.dark .nav-brand {
-  color: #f8fafc;
-}
-
-html.dark .footer-surface {
-  background-color: #111827;
-}
-
-html.dark .footer-text {
-  color: #cbd5e1;
-}
-
 .hero-section {
-  background-color: #f8fafc;
+  background-color: #0f172a;
 }
 
 .hero-heading,
 .hero-copy {
-  color: #0f172a;
+  color: #f8fafc;
 }
 
 .hero-cta-secondary {
-  background-color: #e2e8f0;
-  color: #0f172a;
+  background-color: #334155;
+  color: #f8fafc;
 }
 
 .nav-surface {
-  background-color: #ffffff;
+  background-color: #0f172a;
 }
 
 .nav-link,
 .nav-brand {
-  color: #0f172a;
+  color: #f8fafc;
 }
 
 .footer-surface {
-  background-color: #f8fafc;
+  background-color: #111827;
 }
 
 .footer-text {
-  color: #475569;
+  color: #cbd5e1;
 }

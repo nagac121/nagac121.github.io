@@ -11,23 +11,16 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Portfolio of Naga">
 		<meta name="viewport" content="width=device-width" />
-		<script>
-			const stored = localStorage.getItem('theme');
-			const root = document.documentElement;
-			if (stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-				root.classList.add('dark');
-			}
-		</script>
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="min-h-screen flex flex-col bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+	<body class="min-h-screen flex flex-col bg-slate-950 text-slate-100">
 		<Navigation />
 		<main class="flex-grow container mx-auto px-4 py-8">
 			<slot />
